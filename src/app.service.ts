@@ -1,4 +1,4 @@
-import { HttpException, Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import planets from './data/planets';
 import characters from './data/planets';
 
@@ -13,7 +13,10 @@ export class AppService {
     if (match) {
       return match;
     }
-    return new HttpException(`${id} not found`, 404);
+    return new HttpException(
+      `Unable to locate record with id ${id}`,
+      HttpStatus.NOT_FOUND,
+    );
   }
 
   getCharacters() {
@@ -25,6 +28,9 @@ export class AppService {
     if (match) {
       return match;
     }
-    return new HttpException(`${id} not found`, 404);
+    return new HttpException(
+      `Unable to locate record with id ${id}`,
+      HttpStatus.NOT_FOUND,
+    );
   }
 }

@@ -1,4 +1,11 @@
-import { Controller, Get, Param, Query } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  HttpException,
+  HttpStatus,
+  Param,
+  Query,
+} from '@nestjs/common';
 import { AppService } from './app.service';
 import { setTimeout } from 'timers/promises';
 
@@ -8,11 +15,19 @@ export class AppController {
 
   @Get('/ping')
   ping() {
-    return { pong: `${new Date().toLocaleString()}` };
+    return {
+      pong: `${new Date().toLocaleString()}`,
+    };
   }
 
   @Get('/characters')
   async getCharacters(@Query('delay') delay?: number) {
+    if (isNaN(delay)) {
+      return new HttpException(
+        'Delay must be a number',
+        HttpStatus.BAD_REQUEST,
+      );
+    }
     if (delay) {
       await setTimeout(delay);
     }
@@ -21,12 +36,20 @@ export class AppController {
 
   @Get('/character/:id')
   async getCharacter(@Param('id') id: number) {
+    if (isNaN(id)) {
+      return new HttpException('id must be a number', HttpStatus.BAD_REQUEST);
+    }
     return this.appService.getCharacter(id);
   }
 
   @Get('planets')
   async getPlanets(@Query('delay') delay?: number) {
-    console.log('delay', delay, typeof delay);
+    if (isNaN(delay)) {
+      return new HttpException(
+        'Delay must be a number',
+        HttpStatus.BAD_REQUEST,
+      );
+    }
     if (delay) {
       await setTimeout(delay);
     }
@@ -35,6 +58,9 @@ export class AppController {
 
   @Get('planet/:id')
   async getPlanet(@Param('id') id: number) {
+    if (isNaN(id)) {
+      return new HttpException('id must be a number', HttpStatus.BAD_REQUEST);
+    }
     return this.appService.getPlanet(id);
   }
 }
