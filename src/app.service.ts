@@ -1,14 +1,16 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import planets from './data/planets';
-import { Character, characters } from './data/characters';
+import { planets } from './data/planets';
+import type { Planet } from './data/planets';
+import { characters } from './data/characters';
+import type { Character } from './data/characters';
 
 @Injectable()
 export class AppService {
-  getPlanets() {
+  getPlanets(): Planet[] {
     return planets;
   }
 
-  getPlanet(id: number) {
+  getPlanet(id: number): Planet | Error {
     const match = planets.find((p) => p.id === id);
     if (match) {
       return match;

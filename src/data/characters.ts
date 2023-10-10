@@ -1,27 +1,28 @@
 export interface Character {
   birth_year: string;
+  created: string;
+  edited: string;
   eye_color: string;
   films: string[];
   gender: string;
   hair_color: string;
-  height: string;
+  height_cm: string;
   homeworld: string;
+  id: number;
+  imageUrl: string;
   mass: string;
   name: string;
   skin_color: string;
-  created: string;
-  edited: string;
   species: string[];
   starships: string[];
   url: string;
   vehicles: string[];
-  id: number;
-  imageUrl: string;
 }
+
 export const characters: Character[] = [
   {
     name: 'Luke Skywalker',
-    height: '172',
+    height_cm: '172',
     mass: '77',
     hair_color: 'blond',
     skin_color: 'fair',
@@ -52,7 +53,7 @@ export const characters: Character[] = [
   },
   {
     name: 'C-3PO',
-    height: '167',
+    height_cm: '167',
     mass: '75',
     hair_color: 'n/a',
     skin_color: 'gold',
@@ -75,11 +76,11 @@ export const characters: Character[] = [
     edited: '2014-12-20T21:17:50.309000Z',
     url: 'https://swapi.dev/api/people/2/',
     id: 2,
-    imageUrl: 'characters/r2D2.jpg',
+    imageUrl: 'characters/c-3po.jpeg',
   },
   {
     name: 'R2-D2',
-    height: '96',
+    height_cm: '96',
     mass: '32',
     hair_color: 'n/a',
     skin_color: 'white, blue',
@@ -102,11 +103,11 @@ export const characters: Character[] = [
     edited: '2014-12-20T21:17:50.311000Z',
     url: 'https://swapi.dev/api/people/3/',
     id: 3,
-    imageUrl: '',
+    imageUrl: 'charactrers/r2D2.jpg',
   },
   {
     name: 'Darth Vader',
-    height: '202',
+    height_cm: '202',
     mass: '136',
     hair_color: 'none',
     skin_color: 'white',
@@ -131,7 +132,7 @@ export const characters: Character[] = [
   },
   {
     name: 'Leia Organa',
-    height: '150',
+    height_cm: '150',
     mass: '49',
     hair_color: 'brown',
     skin_color: 'light',
@@ -156,7 +157,7 @@ export const characters: Character[] = [
   },
   {
     name: 'Owen Lars',
-    height: '178',
+    height_cm: '178',
     mass: '120',
     hair_color: 'brown, grey',
     skin_color: 'light',
@@ -180,7 +181,7 @@ export const characters: Character[] = [
   },
   {
     name: 'Beru Whitesun lars',
-    height: '165',
+    height_cm: '165',
     mass: '75',
     hair_color: 'brown',
     skin_color: 'light',
@@ -204,7 +205,7 @@ export const characters: Character[] = [
   },
   {
     name: 'R5-D4',
-    height: '97',
+    height_cm: '97',
     mass: '32',
     hair_color: 'n/a',
     skin_color: 'white, red',
@@ -224,7 +225,7 @@ export const characters: Character[] = [
   },
   {
     name: 'Biggs Darklighter',
-    height: '183',
+    height_cm: '183',
     mass: '84',
     hair_color: 'black',
     skin_color: 'light',
@@ -244,7 +245,7 @@ export const characters: Character[] = [
   },
   {
     name: 'Obi-Wan Kenobi',
-    height: '182',
+    height_cm: '182',
     mass: '77',
     hair_color: 'auburn, white',
     skin_color: 'fair',
@@ -277,7 +278,7 @@ export const characters: Character[] = [
   },
   {
     name: 'Anakin Skywalker',
-    height: '188',
+    height_cm: '188',
     mass: '84',
     hair_color: 'blond',
     skin_color: 'fair',
@@ -308,7 +309,7 @@ export const characters: Character[] = [
   },
   {
     name: 'Wilhuff Tarkin',
-    height: '180',
+    height_cm: '180',
     mass: 'unknown',
     hair_color: 'auburn, grey',
     skin_color: 'fair',
@@ -328,7 +329,7 @@ export const characters: Character[] = [
   },
   {
     name: 'Chewbacca',
-    height: '228',
+    height_cm: '228',
     mass: '112',
     hair_color: 'brown',
     skin_color: 'unknown',
@@ -356,7 +357,7 @@ export const characters: Character[] = [
   },
   {
     name: 'Han Solo',
-    height: '180',
+    height_cm: '180',
     mass: '80',
     hair_color: 'brown',
     skin_color: 'fair',
@@ -383,7 +384,7 @@ export const characters: Character[] = [
   },
   {
     name: 'Greedo',
-    height: '173',
+    height_cm: '173',
     mass: '74',
     hair_color: 'n/a',
     skin_color: 'green',
@@ -403,7 +404,7 @@ export const characters: Character[] = [
   },
   {
     name: 'Jabba Desilijic Tiure',
-    height: '175',
+    height_cm: '175',
     mass: '1,358',
     hair_color: 'n/a',
     skin_color: 'green-tan, brown',
@@ -427,7 +428,7 @@ export const characters: Character[] = [
   },
   {
     name: 'Wedge Antilles',
-    height: '170',
+    height_cm: '170',
     mass: '77',
     hair_color: 'brown',
     skin_color: 'fair',
@@ -451,7 +452,7 @@ export const characters: Character[] = [
   },
   {
     name: 'Jek Tono Porkins',
-    height: '180',
+    height_cm: '180',
     mass: '110',
     hair_color: 'brown',
     skin_color: 'fair',
@@ -471,7 +472,7 @@ export const characters: Character[] = [
   },
   {
     name: 'Yoda',
-    height: '66',
+    height_cm: '66',
     mass: '17',
     hair_color: 'white',
     skin_color: 'green',
@@ -497,7 +498,7 @@ export const characters: Character[] = [
   },
   {
     name: 'Palpatine',
-    height: '170',
+    height_cm: '170',
     mass: '75',
     hair_color: 'grey',
     skin_color: 'pale',
