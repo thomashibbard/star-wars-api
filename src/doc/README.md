@@ -4,7 +4,7 @@
 
 `/planets?[delay=<milliseconds>]`
 
-Returns a list of all planets in the format. Optionally provide a `delay` as a query param to simulate latency.
+Returns a list of all planets in the below format. Optionally provide a `delay` as a query param to simulate latency.
 
 Response
 
@@ -28,17 +28,11 @@ Array<{
 
 `/planets/:id`
 
-Returns detail for a planet of the specified ID in the same format as the planets list endpoint
-
-```css
-.el {
-    background: blue;
-}
-```
+Returns detail for a planet of the specified `id` in the same format as the planets list endpoint above.
 
 `/characters?[delay=<milliseconds>]`
 
-Returns a list of all characters in the format. Optionally provide a `delay` as a query param to simulate latency.
+Returns a list of all characters in the below format. Optionally provide a `delay` as a query param to simulate latency.
 
 Response:
 
@@ -66,4 +60,4 @@ Array<{
 
 `/characters/:id`
 
-Returns detail for a character of the specified ID in the same format as the characters list endpoint
+Returns detail for a character of the specified `id` in the same format as the characters list endpoint above.
