@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import planets from './data/planets';
-import characters from './data/planets';
+import { Character, characters } from './data/characters';
 
 @Injectable()
 export class AppService {
@@ -19,11 +19,11 @@ export class AppService {
     );
   }
 
-  getCharacters() {
+  getCharacters(): Character[] {
     return characters;
   }
 
-  getCharacter(id: number) {
+  getCharacter(id: number): Character | Error {
     const match = characters.find((c) => c.id === id);
     if (match) {
       return match;

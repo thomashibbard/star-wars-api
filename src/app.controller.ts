@@ -12,6 +12,7 @@ import { setTimeout } from 'timers/promises';
 import { resolve } from 'path';
 import { readFile } from 'fs/promises';
 import { MarkdownService } from './markdown.service';
+
 @Controller()
 export class AppController {
   constructor(
@@ -19,18 +20,22 @@ export class AppController {
     private markdownService: MarkdownService,
   ) {}
 
+  @Get('')
+  @Header('content-type', 'text/html')
+  async getReadme() {
+    console.log('getReadme', resolve(__dirname, 'assets', 'doc', 'README.md'));
+    const md = await readFile(
+      resolve(__dirname, 'assets', 'doc', 'README.md'),
+      'utf-8',
+    );
+    return this.markdownService.render(md);
+  }
+
   @Get('/ping')
   ping() {
     return {
       pong: `${new Date().toLocaleString()}`,
     };
-  }
-
-  @Get('/README')
-  @Header('content-type', 'text/html')
-  async getReadme() {
-    const md = await readFile(resolve(__dirname, 'doc', 'README.md'), 'utf-8');
-    return this.markdownService.render(md);
   }
 
   @Get('/characters')

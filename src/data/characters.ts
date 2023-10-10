@@ -1,4 +1,24 @@
-export default [
+export interface Character {
+  birth_year: string;
+  eye_color: string;
+  films: string[];
+  gender: string;
+  hair_color: string;
+  height: string;
+  homeworld: string;
+  mass: string;
+  name: string;
+  skin_color: string;
+  created: string;
+  edited: string;
+  species: string[];
+  starships: string[];
+  url: string;
+  vehicles: string[];
+  id: number;
+  imageUrl: string;
+}
+export const characters: Character[] = [
   {
     name: 'Luke Skywalker',
     height: '172',
@@ -28,6 +48,7 @@ export default [
     edited: '2014-12-20T21:17:56.891000Z',
     url: 'https://swapi.dev/api/people/1/',
     id: 1,
+    imageUrl: 'characters/lukeSkywalker.png',
   },
   {
     name: 'C-3PO',
@@ -54,6 +75,7 @@ export default [
     edited: '2014-12-20T21:17:50.309000Z',
     url: 'https://swapi.dev/api/people/2/',
     id: 2,
+    imageUrl: 'characters/r2D2.jpg',
   },
   {
     name: 'R2-D2',
@@ -80,6 +102,7 @@ export default [
     edited: '2014-12-20T21:17:50.311000Z',
     url: 'https://swapi.dev/api/people/3/',
     id: 3,
+    imageUrl: '',
   },
   {
     name: 'Darth Vader',
@@ -104,6 +127,7 @@ export default [
     edited: '2014-12-20T21:17:50.313000Z',
     url: 'https://swapi.dev/api/people/4/',
     id: 4,
+    imageUrl: '',
   },
   {
     name: 'Leia Organa',
@@ -128,6 +152,7 @@ export default [
     edited: '2014-12-20T21:17:50.315000Z',
     url: 'https://swapi.dev/api/people/5/',
     id: 5,
+    imageUrl: '',
   },
   {
     name: 'Owen Lars',
@@ -151,6 +176,7 @@ export default [
     edited: '2014-12-20T21:17:50.317000Z',
     url: 'https://swapi.dev/api/people/6/',
     id: 6,
+    imageUrl: '',
   },
   {
     name: 'Beru Whitesun lars',
@@ -174,6 +200,7 @@ export default [
     edited: '2014-12-20T21:17:50.319000Z',
     url: 'https://swapi.dev/api/people/7/',
     id: 7,
+    imageUrl: '',
   },
   {
     name: 'R5-D4',
@@ -193,6 +220,7 @@ export default [
     edited: '2014-12-20T21:17:50.321000Z',
     url: 'https://swapi.dev/api/people/8/',
     id: 8,
+    imageUrl: '',
   },
   {
     name: 'Biggs Darklighter',
@@ -212,6 +240,7 @@ export default [
     edited: '2014-12-20T21:17:50.323000Z',
     url: 'https://swapi.dev/api/people/9/',
     id: 9,
+    imageUrl: '',
   },
   {
     name: 'Obi-Wan Kenobi',
@@ -244,6 +273,7 @@ export default [
     edited: '2014-12-20T21:17:50.325000Z',
     url: 'https://swapi.dev/api/people/10/',
     id: 10,
+    imageUrl: '',
   },
   {
     name: 'Anakin Skywalker',
@@ -274,6 +304,7 @@ export default [
     edited: '2014-12-20T21:17:50.327000Z',
     url: 'https://swapi.dev/api/people/11/',
     id: 11,
+    imageUrl: '',
   },
   {
     name: 'Wilhuff Tarkin',
@@ -293,6 +324,7 @@ export default [
     edited: '2014-12-20T21:17:50.330000Z',
     url: 'https://swapi.dev/api/people/12/',
     id: 12,
+    imageUrl: '',
   },
   {
     name: 'Chewbacca',
@@ -320,6 +352,7 @@ export default [
     edited: '2014-12-20T21:17:50.332000Z',
     url: 'https://swapi.dev/api/people/13/',
     id: 13,
+    imageUrl: '',
   },
   {
     name: 'Han Solo',
@@ -346,6 +379,7 @@ export default [
     edited: '2014-12-20T21:17:50.334000Z',
     url: 'https://swapi.dev/api/people/14/',
     id: 14,
+    imageUrl: '',
   },
   {
     name: 'Greedo',
@@ -365,6 +399,7 @@ export default [
     edited: '2014-12-20T21:17:50.336000Z',
     url: 'https://swapi.dev/api/people/15/',
     id: 15,
+    imageUrl: '',
   },
   {
     name: 'Jabba Desilijic Tiure',
@@ -388,6 +423,7 @@ export default [
     edited: '2014-12-20T21:17:50.338000Z',
     url: 'https://swapi.dev/api/people/16/',
     id: 16,
+    imageUrl: '',
   },
   {
     name: 'Wedge Antilles',
@@ -411,6 +447,7 @@ export default [
     edited: '2014-12-20T21:17:50.341000Z',
     url: 'https://swapi.dev/api/people/18/',
     id: 17,
+    imageUrl: '',
   },
   {
     name: 'Jek Tono Porkins',
@@ -430,6 +467,7 @@ export default [
     edited: '2014-12-20T21:17:50.343000Z',
     url: 'https://swapi.dev/api/people/19/',
     id: 18,
+    imageUrl: '',
   },
   {
     name: 'Yoda',
@@ -455,6 +493,7 @@ export default [
     edited: '2014-12-20T21:17:50.345000Z',
     url: 'https://swapi.dev/api/people/20/',
     id: 19,
+    imageUrl: '',
   },
   {
     name: 'Palpatine',
@@ -480,5 +519,6 @@ export default [
     edited: '2014-12-20T21:17:50.347000Z',
     url: 'https://swapi.dev/api/people/21/',
     id: 20,
+    imageUrl: '',
   },
 ];
