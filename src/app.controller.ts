@@ -1,6 +1,7 @@
 import {
   Controller,
   Get,
+  Header,
   HttpException,
   HttpStatus,
   Param,
@@ -8,16 +9,28 @@ import {
 } from '@nestjs/common';
 import { AppService } from './app.service';
 import { setTimeout } from 'timers/promises';
-
+import { resolve } from 'path';
+import { readFile } from 'fs/promises';
+import { MarkdownService } from './markdown.service';
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(
+    private readonly appService: AppService,
+    private markdownService: MarkdownService,
+  ) {}
 
   @Get('/ping')
   ping() {
     return {
       pong: `${new Date().toLocaleString()}`,
     };
+  }
+
+  @Get('/README')
+  @Header('content-type', 'text/html')
+  async getReadme() {
+    const md = await readFile(resolve(__dirname, 'doc', 'README.md'), 'utf-8');
+    return this.markdownService.render(md);
   }
 
   @Get('/characters')
