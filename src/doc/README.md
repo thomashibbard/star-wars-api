@@ -2,6 +2,8 @@
 
 ## Endpoints 
 
+### Planets
+
 `/planets?[delay=<milliseconds>]`
 
 Returns a list of all planets in the below format. Optionally provide a `delay` as a query param to simulate latency.
@@ -25,10 +27,13 @@ Array<{
 }>        
 ```
 
+### Planet by ID
 
 `/planets/:id`
 
 Returns detail for a planet of the specified `id` in the same format as the planets list endpoint above.
+
+### Characters
 
 `/characters?[delay=<milliseconds>]`
 
@@ -55,8 +60,9 @@ Array<{
     url:        string;
     vehicles:   string[];
 }> 
-    
 ```
+
+### Character by ID
 
 `/characters/:id`
 

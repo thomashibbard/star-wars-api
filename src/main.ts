@@ -17,7 +17,6 @@ async function bootstrap() {
     },
   );
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
-  // app.setViewEngine({});
   await app.listen(port, address);
 }
 bootstrap();
